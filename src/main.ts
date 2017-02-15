@@ -10,7 +10,7 @@ window.onload = () => {
     image.onload = () => {
         cxt.clearRect(0,0,c.width,c.height);
         cxt.drawImage(image, 0, 0);
-    } 
+    }  
     
 
     var stage: DisplayObjectContainer = new DisplayObjectContainer();
