@@ -79,12 +79,7 @@ class TextField implements Drawable {
     text: string = "";
     textColor: string = "#000000"
    draw(context2D: CanvasRenderingContext2D) {
-        this.toggleCase();
         context2D.fillStyle = this.textColor;
         context2D.fillText(this.text, this.x, this.y, 100);
-    }
-
-    private toggleCase() {
-        this.textColor.toLocaleUpperCase();
     }
 }
