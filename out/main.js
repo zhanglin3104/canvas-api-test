@@ -13,30 +13,30 @@ window.onload = function () {
         cxt.clearRect(0, 0, c.width, c.height);
         stage.draw(cxt);
     }, 30);
-    var imageBitmap = new Bitmap();
-    imageBitmap.name = "flower.png";
-    imageBitmap.x = 50;
-    imageBitmap.y = 50;
-    var textField = new TextField();
-    textField.text = "flower";
-    textField.x = 50;
-    textField.y = 50;
-    textField.textColor = "#0000FF";
-    stage.addChild(imageBitmap);
-    stage.addChild(textField);
+    var img = new Bitmap();
+    img.name = "flower.png";
+    img.x = 50;
+    img.y = 50;
+    var tf = new TextField();
+    tf.text = "flower";
+    tf.x = 50;
+    tf.y = 50;
+    tf.textColor = "#0000FF";
+    stage.addChild(img);
+    stage.addChild(tf);
 };
 var DisplayObjectContainer = (function () {
     function DisplayObjectContainer() {
-        this.childs = [];
+        this.array = [];
     }
     DisplayObjectContainer.prototype.draw = function (context2D) {
-        for (var _i = 0, _a = this.childs; _i < _a.length; _i++) {
+        for (var _i = 0, _a = this.array; _i < _a.length; _i++) {
             var drawable = _a[_i];
             drawable.draw(context2D);
         }
     };
     DisplayObjectContainer.prototype.addChild = function (child) {
-        this.childs.push(child);
+        this.array.push(child);
     };
     return DisplayObjectContainer;
 }());

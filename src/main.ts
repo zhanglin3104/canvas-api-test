@@ -19,21 +19,21 @@ window.onload = () => {
         stage.draw(cxt);
     }, 30);
 
-    var imageBitmap: Bitmap = new Bitmap();
-    imageBitmap.name = "flower.png"
-    imageBitmap.x = 50;
-    imageBitmap.y = 50;
+    var img: Bitmap = new Bitmap();
+    img.name = "flower.png"
+    img.x = 50;
+    img.y = 50;
     
 
-    var textField: TextField = new TextField();
-    textField.text = "flower";
-    textField.x = 50;
-    textField.y = 50;
-    textField.textColor = "#0000FF"
+    var tf: TextField = new TextField();
+    tf.text = "flower";
+    tf.x = 50;
+    tf.y = 50;
+    tf.textColor = "#0000FF"
    
   
-    stage.addChild(imageBitmap);
-    stage.addChild(textField);
+    stage.addChild(img);
+    stage.addChild(tf);
 };
 
 interface Drawable {
@@ -42,14 +42,15 @@ interface Drawable {
 
 
 class DisplayObjectContainer implements Drawable {
-    childs: Drawable[] = [];
+    array: Drawable[] = [];
+    
     draw(context2D: CanvasRenderingContext2D) {
-        for (let drawable of this.childs) {
+        for (let drawable of this.array) {
             drawable.draw(context2D);
         }
     }
     addChild(child: Drawable) {
-        this.childs.push(child);
+        this.array.push(child);
     }
 
 }
