@@ -96,12 +96,12 @@ class DisplayObject implements Drawable{
     y : number = 0;
     scaleX : number = 1;
     scaleY : number = 1;
-    rotation : number = 0;
+    rotation : number = 0; 
 
     matrix : math.Matrix = null;
     globalMatrix : math.Matrix = null;
 
-    alpha : number = 1;//相对
+    alpha : number = 1;
     globalAlpha : number = 1;//全局                             
     parent : DisplayObject = null;
 
